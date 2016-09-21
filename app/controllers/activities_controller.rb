@@ -9,9 +9,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Food.new(activity_params)
+    @activity = Activity.new(activity_params)
     @activity.user_id = current_user.id
-    @activity.save
+    if @activity.save
+      flash[:notice] = "activity saved!"
+    end
     respond_to do |format|
       format.html { redirect_to activities_url }
       format.js

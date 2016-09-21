@@ -14,7 +14,16 @@
     </div>
 
     <div class="col-md-6" id="activities">
-      
+      <h1>Activity</h1>
+
+      <%= link_to "Add Activity", new_activity_path, id: "add_activity", remote: true %>
+      <br><br>
+      <div id="activity_list">
+        <% @activities.each do |activity| %>
+          <%= render "activities/activity", :activity => activity %>
+        <% end %>
+      </div>
+
 
     </div>
   </div>
