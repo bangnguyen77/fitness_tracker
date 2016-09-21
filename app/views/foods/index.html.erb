@@ -1,0 +1,11 @@
+<h1>Food</h1>
+
+<%= link_to "Add Food", new_food_path %>
+<br><br>
+<% @foods.each do |food| %>
+<h5>
+  <%= food.name %> ---- <%= food.calories %>
+  <%= link_to "Edit", edit_food_path(food) %>
+  <%= link_to "Remove", food_path(food), :data => {:confirm => "Are You Sure??", :method => "delete"} %>
+</h5>
+<% end %>
