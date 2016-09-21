@@ -1,3 +1,4 @@
 $('#new_food').remove();
 $('#add_food').show();
 $('#food_list').append('<%= j render(@food) %>');
+$('h2#food_cal').text('Total Calories: <%= Food.sum(:calories) %>');

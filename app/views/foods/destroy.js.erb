@@ -1,3 +1,4 @@
 $(function(){
   $('#edit_food_<%= @food.id %>').remove();
+  $('h2#food_cal').text('Total Calories: <%= Food.sum(:calories) %>');
 });

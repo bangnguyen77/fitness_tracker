@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-6" id="foods">
       <h1>Food</h1>
+      <h2 id="food_cal">Total Calories:<%= Food.sum(:calories) %></h2>
 
       <%= link_to "Add Food", new_food_path, id: "add_food", remote: true %>
       <br><br>
@@ -11,10 +12,13 @@
         <% end %>
 
       </div>
+      <hr>
+
     </div>
 
     <div class="col-md-6" id="activities">
       <h1>Activity</h1>
+      <h2 id="activity_cal">Total Calories:<%= Activity.sum(:calories) %></h2>
 
       <%= link_to "Add Activity", new_activity_path, id: "add_activity", remote: true %>
       <br><br>
