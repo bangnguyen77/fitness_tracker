@@ -32,9 +32,11 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id])
-    @food.destroy
-    redirect_to foods_path
+    @food = Food.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to foods_url }
+      format.js
+    end
   end
 
   private
