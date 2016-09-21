@@ -1,0 +1,7 @@
+<%= form_for activity do |f| %>
+  <h5>
+    <%= activity.name %> ---- <%= activity.calories %>
+    <%= link_to "Edit", edit_activity_path(activity) %>
+    <%= link_to "Remove", activity_path(activity), :data => {:confirm => "Are You Sure??", :method => "delete"}, remote: true %>
+  </h5>
+<% end %>
