@@ -1,10 +1,21 @@
-<h1>Food</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="foods">
+      <h1>Food</h1>
 
-<%= link_to "Add Food", new_food_path, id: "add_food", remote: true %>
-<br><br>
-<div id="food_list">
-  <% @foods.each do |food| %>
-    <%= render "food", :food => food %>
-  <% end %>
+      <%= link_to "Add Food", new_food_path, id: "add_food", remote: true %>
+      <br><br>
+      <div id="food_list">
+        <% @foods.each do |food| %>
+          <%= render "food", :food => food %>
+        <% end %>
 
+      </div>
+    </div>
+
+    <div class="col-md-6" id="activities">
+      
+
+    </div>
+  </div>
 </div>
