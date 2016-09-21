@@ -10,10 +10,10 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user_id = current_user.id
-    if @food.save
-      redirect_to foods_path
-    else
-      render 'new'
+    @food.save
+    respond_to do |format|
+      format.html { redirect_to foods_url }
+      format.js
     end
   end
 
