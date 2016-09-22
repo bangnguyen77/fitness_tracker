@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(function() {
+  $("#food_list a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+});

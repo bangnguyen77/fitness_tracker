@@ -2,7 +2,7 @@ class FoodsController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
     @foods = Food.search(params[:search]).order(sort_column+" "+sort_direction).paginate(:page => params[:page], :per_page => 5)
-    @activities = Activity.all.paginate(:page => params[:page], :per_page => 5)
+    @activities = Activity.search(params[:search_a]).order(sort_column_a+" "+sort_direction_a).paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -53,5 +53,13 @@ class FoodsController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def sort_column_a
+    Activity.column_names.include?(params[:sort_a]) ? params[:sort_a] : "name"
+  end
+
+  def sort_direction_a
+    %w[asc desc].include?(params[:direction_a]) ? params[:direction_a] : "asc"
   end
 end

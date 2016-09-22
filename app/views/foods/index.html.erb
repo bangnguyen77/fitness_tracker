@@ -9,18 +9,18 @@
           <%= submit_tag "Search", :name => nil %>
         </p>
       <% end %>
-      
+
       <h1>Food</h1>
       <h2 id="food_cal">Total Calories:<%= Food.sum(:calories) %></h2>
 
       <%= link_to "Add Food", new_food_path, id: "add_food", remote: true %>
       <br><br>
       <div id="food_list">
-      <h5><%= sortable "name", "Food" %> ---- <%= sortable "calories" %></h5>
-      <hr>
-        <% @foods.each do |food| %>
-          <%= render "food", :food => food %>
-        <% end %>
+        <h5><%= sortable "name", "Food" %> ---- <%= sortable "calories" %></h5>
+        <hr>
+          <% @foods.each do |food| %>
+            <%= render "food", :food => food %>
+          <% end %>
 
       </div>
       <%= will_paginate @foods %>
@@ -29,6 +29,15 @@
     </div>
 
     <div class="col-md-6" id="activities">
+      <%= form_tag foods_path, :method => 'get' do %>
+        <%= hidden_field_tag :direction_a, params[:direction_a] %>
+        <%= hidden_field_tag :sort_a, params[:sort_a] %>
+        <p>
+          <%= text_field_tag :search_a, params[:search_a] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+
       <h1>Activity</h1>
       <h2 id="activity_cal">Total Calories:<%= Activity.sum(:calories) %></h2>
 
