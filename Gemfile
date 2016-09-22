@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'will_paginate', '~> 3.1', '>= 3.1.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri

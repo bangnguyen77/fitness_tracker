@@ -14,6 +14,7 @@
         <% end %>
 
       </div>
+      <%= will_paginate @foods %>
       <hr>
 
     </div>
@@ -29,8 +30,9 @@
           <%= render "activities/activity", :activity => activity %>
         <% end %>
       </div>
-
+      <%= will_paginate @activities %>
         <hr>
     </div>
+
   </div>
 </div>
