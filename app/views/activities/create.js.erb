@@ -1,3 +1,4 @@
 $('#new_activity').remove();
 $('#add_activity').show();
 $('#activity_list').append('<%= j render(@activity) %>');
+$('h2#activity_cal').text('Total Calories: <%= Activity.sum(:calories) %>');

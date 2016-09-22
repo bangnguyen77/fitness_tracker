@@ -3,3 +3,17 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.asc {
+  background-image: url(/images/up_arrow.gif);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.desc {
+  background-image: url(/images/down_arrow.gif);
+  background-repeat: no-repeat;
+  background-position: right center;
+
+
+}

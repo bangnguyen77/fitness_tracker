@@ -7,6 +7,8 @@
       <%= link_to "Add Food", new_food_path, id: "add_food", remote: true %>
       <br><br>
       <div id="food_list">
+      <h5><%= sortable "name", "Food" %> ---- <%= sortable "calories" %></h5>
+      <hr>
         <% @foods.each do |food| %>
           <%= render "food", :food => food %>
         <% end %>
@@ -28,7 +30,7 @@
         <% end %>
       </div>
 
-
+        <hr>
     </div>
   </div>
 </div>

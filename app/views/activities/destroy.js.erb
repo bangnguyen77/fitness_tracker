@@ -1,3 +1,4 @@
 $(function(){
   $('#edit_activity_<%= @activity.id %>').remove();
+  $('h2#activity_cal').text('Total Calories: <%= Activity.sum(:calories) %>');
 });
