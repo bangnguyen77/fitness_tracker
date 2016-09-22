@@ -1,6 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6" id="foods">
+      <%= form_tag foods_path, :method => 'get' do %>
+        <%= hidden_field_tag :direction, params[:direction] %>
+        <%= hidden_field_tag :sort, params[:sort] %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      
       <h1>Food</h1>
       <h2 id="food_cal">Total Calories:<%= Food.sum(:calories) %></h2>
 
